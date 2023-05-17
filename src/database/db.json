@@ -1,0 +1,50 @@
+{
+  "usuarios": [
+    {
+      "id": 1,
+      "email": "teste@email.com",
+      "password": "teste123"
+    }
+  ],
+  "informacoes": [
+    {
+      "id": 1,
+      "foto": "https://github.com/wallacem8.png",
+      "nome": "Wallace Medeiros",
+      "cargo": "Desenvolvedor Back-End",
+      "resumo": "Testando"
+    }
+  ],
+  "experiencias": [
+    {
+      "id": 1,
+      "titulo": "Desenvolvedor Back-End",
+      "descricao": "Teste",
+      "tipo": "profissional ",
+      "anoInicio": "2020",
+      "anoFim": "2028"
+    },
+    {
+      "id": 3,
+      "titulo": "ADS",
+      "descricao": "Graduação em Tecnologia.",
+      "tipo": "academico",
+      "anoInicio": "2022",
+      "anoFim": "2023"
+    }
+  ],
+  "portfolio": [
+    {
+      "id": 9,
+      "link": "https://wallacem8.github.io/projeto1/index.html",
+      "image": "https://cdn-icons-png.flaticon.com/512/88/88961.png?w=360",
+      "title": "Arena Gringa"
+    },
+    {
+      "id": 10,
+      "link": "https://wallacem8.github.io/projeto-netflix/",
+      "image": "https://pbs.twimg.com/profile_images/847849985525919745/tSKGQUjz_400x400.jpg",
+      "title": "Futflix"
+    }
+  ]
+}
