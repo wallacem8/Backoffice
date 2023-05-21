@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 import styles from "./ListaExperiencia.module.css"
-import {Experiencia, deleteExperiencia, getExperiencia } from "../../../services/experienciaService";
+import {Experiencia, deleteExperiencia, getExperiencias } from "../../../services/experienciaService";
 
 const ListaExperiencia: React.FC = () => {
     const navigate = useNavigate();
@@ -11,7 +11,7 @@ const ListaExperiencia: React.FC = () => {
 
     const fetchExperiencias = async () => {
         try {
-            const experiencias = await getExperiencia()
+            const experiencias = await getExperiencias()
             setExperiencias(experiencias);
         } catch (error) {
             console.log('Erro ao buscar experiências', error);
@@ -61,7 +61,7 @@ const ListaExperiencia: React.FC = () => {
                         <td>{experiencia.anoFim}</td>
                         <td>
                             <button onClick={() => handleEdit(experiencia)}>Editar</button>
-                            <button onClick={() => handleDelete(experiencia.id)}>Excluir</button>
+                            <button onClick={() => handleDelete(index)}>Excluir</button>
                         </td>
                     </tr>
                 ))}

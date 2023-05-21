@@ -5,16 +5,16 @@ import styles from "./CadastrarPortfolio.module.css";
 
 import * as Yup from "yup";
 import Input from "../../../components/forms/Input";
-import { Portfolio, createOrUpdatePortfolio} from "../../../services/portfolioService";
+import { Projeto, createOrUpdateProjeto} from "../../../services/portfolioService";
 import { useLocation, useNavigate } from "react-router-dom";
 
 
 const CadastrarPortfolio: React.FC = () => {
     const navigate = useNavigate();
     const location = useLocation();
-    const portfolio = location.state as Portfolio;
+    const portfolio = location.state as Projeto;
     
-    const initialValues: Portfolio = {
+    const initialValues: Projeto = {
         id: 0,
         link: "",
         image: "",
@@ -27,9 +27,9 @@ const CadastrarPortfolio: React.FC = () => {
         title: Yup.string().required("Campo obrigatório")
     });
 
-    const onSubmit = async (values: Portfolio, {resetForm}: {resetForm: () => void}) => {
+    const onSubmit = async (values: Projeto, {resetForm}: {resetForm: () => void}) => {
         try {
-            await createOrUpdatePortfolio(values);
+            await createOrUpdateProjeto(values);
             console.log(values);
             resetForm();
             navigate('/portfolio/lista');

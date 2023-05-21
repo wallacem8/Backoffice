@@ -1,7 +1,7 @@
 import api from "./api";
 
 export interface Experiencia {
-    id: number;
+    id?: number;
     titulo: string;
     descricao: string;
     tipo: string;
@@ -19,12 +19,12 @@ export const getExperiencias = async (): Promise<Experiencia[]> => {
     return response.data;
 }
 
-export const getExperienciaById = async (id: number): Promise<Experiencia> => {
+export const getExperienciasById = async (id: number): Promise<Experiencia> => {
     const response = await api.get<Experiencia>(`/experiencias/${id}`);
     return response.data;
 }
 
-export const getExperienciaByTipo = async (tipo: string): Promise<Experiencia[]> => {
+export const getExperienciasByTipo = async (tipo: string): Promise<Experiencia[]> => {
     const response = await api.get<Experiencia[]>(`/experiencias?tipo=${tipo}`);
     return response.data;
 }
