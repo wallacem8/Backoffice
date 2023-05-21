@@ -83,8 +83,8 @@ const CadastrarExperiencia: React.FC = () => {
                             label="Tipo de experiência"
                             name="tipo"
                             options={[
-                                { value: "profissional ", label: "Profissional"},
-                                { value: "academico", label: "Acadêmico"}
+                                { value: "profissional", label: "Profissional"},
+                                { value: "academica", label: "Acadêmico"}
                             ]}
                             errors={errors.tipo}
                             touched={touched.tipo}
