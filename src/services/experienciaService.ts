@@ -24,6 +24,11 @@ export const getExperienciaById = async (id: number) => {
     return response.data;
 }
 
+export const getExperienciaByTipo = async (tipo: string) => {
+    const response = await api.get(`/experiencias?tipo=${tipo}`);
+    return response.data;
+}
+
 export const updateExperiencia = async (experiencia: Experiencia) => {
     const response = await api.put(`/experiencias/${experiencia.id}`, experiencia);
     return response.data;

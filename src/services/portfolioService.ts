@@ -32,7 +32,7 @@ export const deletePortfolio = async (id: number) => {
     return response.data;
 }
 
-export const createOrUpdatePortfolio = async (portfolio: Portfolio) => {
+export const createOrUpdatePortfolio = async (portfolio: Portfolio): Promise<Portfolio> => {
     if(portfolio.id === 0) {
         return await createPortfolio(portfolio);
     } else {

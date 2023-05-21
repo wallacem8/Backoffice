@@ -8,6 +8,11 @@ export interface Informacoes {
     resumo: string;
 }
 
+export const createInformacoes = async (informacoes: Informacoes): Promise<Informacoes> => {
+    const response = await api.post<Informacoes>("/informacoes", informacoes);
+    return response.data;
+}
+
 export async function updateInformacoes(informacoes:Informacoes): Promise<Informacoes> {
     const response = await api.put<Informacoes>("/informacoes/1", informacoes);
     return response.data;
@@ -21,4 +26,12 @@ export async function getInformacoes(): Promise<Informacoes> {
 export async function deleteInformacoes(informacoes: Informacoes): Promise<Informacoes> {
     const response = await api.delete<Informacoes>("/informacoes/1");
     return response.data;
+}
+
+export const createOrUpdateInformacoes = async (informacoes: Informacoes): Promise<Informacoes> => {
+    if (informacoes.id) {
+        return await updateInformacoes(informacoes);
+    } else {
+        return await createInformacoes(informacoes);
+    }
 }
