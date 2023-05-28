@@ -52,8 +52,8 @@ const ListaExperiencia: React.FC = () => {
                 </tr>
             </thead>
             <tbody>
-                {experiencias.map((experiencia, index) => (
-                    <tr key={index}>
+                {experiencias.map((experiencia, id) => (
+                    <tr key={id}>
                         <td>{experiencia.titulo}</td>
                         <td>{experiencia.descricao}</td>
                         <td>{experiencia.tipo}</td>
@@ -61,7 +61,7 @@ const ListaExperiencia: React.FC = () => {
                         <td>{experiencia.anoFim}</td>
                         <td>
                             <button onClick={() => handleEdit(experiencia)}>Editar</button>
-                            <button onClick={() => handleDelete(index)}>Excluir</button>
+                            <button onClick={() => handleDelete(id)}>Excluir</button>
                         </td>
                     </tr>
                 ))}
