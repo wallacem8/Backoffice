@@ -17,7 +17,6 @@ const CadastrarExperiencia: React.FC = () => {
     const experiencia = location.state as Experiencia;
 
     const initialValues: Experiencia = {
-        id: 0,
         titulo: "",
         descricao: "",
         tipo: "",
